@@ -7,54 +7,54 @@
 jQuery(document).ready(function(){
 
 	"use strict";
-
+	
 	// here all ready functions
-
-	ali_tm_modalbox();
-	ali_tm_nav_bg();
-	ali_tm_trigger_menu();
-	ali_tm_modalbox_news();
-	ali_tm_modalbox_portfolio();
-	ali_tm_imgtosvg();
-	ali_tm_popup();
-	ali_tm_data_images();
-	ali_tm_swiper();
+	
+	erling_tm_modalbox();
+	erling_tm_nav_bg();
+	erling_tm_trigger_menu();
+	erling_tm_modalbox_news();
+	erling_tm_modalbox_portfolio();
+	erling_tm_imgtosvg();
+	erling_tm_popup();
+	erling_tm_data_images();
+	erling_tm_swiper();
 	myAccordion();
-	ali_tm_totop();
-
+	erling_tm_totop();
+	
 	jQuery(window).load('body', function(){
-		ali_tm_my_load();
+		erling_tm_my_load();
 	});
-
+	
 	jQuery(window).on('scroll', function(){
-		ali_tm_progress_line();
+		erling_tm_progress_line();
 	});
-
+	
 });
 
 // -----------------------------------------------------
 // --------------------   MODALBOX    ------------------
 // -----------------------------------------------------
 
-function ali_tm_modalbox(){
+function erling_tm_modalbox(){
 	"use strict";
-
-	//jQuery('.ali_tm_all_wrap').prepend('<div class="ali_tm_modalbox"><div class="box_inner"><div class="close"><a href="#"><i class="icon-cancel"></i></a></div><div class="description_wrap"></div></div></div>');
+	
+	jQuery('.erling_tm_all_wrap').prepend('<div class="erling_tm_modalbox"><div class="box_inner"><div class="close"><a href="#"><i class="icon-cancel"></i></a></div><div class="description_wrap"></div></div></div>');
 }
 
 // -------------------------------------------------
 // -------------   TOPBAR BG SCROLL  ---------------
 // -------------------------------------------------
 
-function ali_tm_nav_bg(){
-
+function erling_tm_nav_bg(){
+	
 	"use strict";
-
+	
 	jQuery(window).on('scroll',function(){
-		var menu	 		= jQuery('.ali_tm_header');
+		var menu	 		= jQuery('.erling_tm_header');
 		var progress	 	= jQuery('.progressbar');
 		var WinOffset		= jQuery(window).scrollTop();
-
+		
 		if(WinOffset >= 100){
 			menu.addClass('animate');
 			progress.addClass('animate');
@@ -70,9 +70,9 @@ function ali_tm_nav_bg(){
 // -------------------------------------------------
 
 function tdProgress(container){
-
+	
 	"use strict";
-
+		
 	container.find('.progress_inner').each(function() {
 		var progress 		= jQuery(this);
 		var pValue 			= parseInt(progress.data('value'), 10);
@@ -84,28 +84,28 @@ function tdProgress(container){
 	});
 }
 
-jQuery('.ali_progress').each(function() {
+jQuery('.erling_progress').each(function() {
 
 	"use strict";
 
 	var pWrap 			= jQuery(this);
-	pWrap.waypoint({handler: function(){tdProgress(pWrap);},offset:'90%'});
+	pWrap.waypoint({handler: function(){tdProgress(pWrap);},offset:'90%'});	
 });
 
 // -----------------------------------------------------
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
 
-function ali_tm_trigger_menu(){
-
+function erling_tm_trigger_menu(){
+	
 	"use strict";
 
 	var audio1			= jQuery('.audiowrap #audio1');
 	var audio2			= jQuery('.audiowrap #audio2');
 	var hamburger 		= jQuery('.trigger .hamburger');
-	var list			= jQuery('.ali_tm_header .list ul li');
-	var mobileMenu		= jQuery('.ali_tm_mobile_menu .dropdown');
-	var mobileMenuList	= jQuery('.ali_tm_mobile_menu .dropdown .dropdown_inner ul li a');
+	var list			= jQuery('.erling_tm_header .list ul li');
+	var mobileMenu		= jQuery('.erling_tm_mobile_menu .dropdown');
+	var mobileMenuList	= jQuery('.erling_tm_mobile_menu .dropdown .dropdown_inner ul li a');
 
 	hamburger.on('click',function(){
 		var element 	= jQuery(this);
@@ -130,7 +130,7 @@ function ali_tm_trigger_menu(){
 		}
 		return false;
 	});
-
+	
 	mobileMenuList.on('click',function(){
 		jQuery('.trigger .hamburger').removeClass('is-active');
 		mobileMenu.slideUp();
@@ -142,14 +142,14 @@ function ali_tm_trigger_menu(){
 // -------------  MODALBOX NEWS  -------------------
 // -------------------------------------------------
 
-function ali_tm_modalbox_news(){
-
+function erling_tm_modalbox_news(){
+	
 	"use strict";
-
-	var modalBox		= jQuery('.ali_tm_modalbox');
-	var button			= jQuery('.ali_tm_news .ali_tm_full_link, .ali_tm_news .news_list ul li .title a');
+	
+	var modalBox		= jQuery('.erling_tm_modalbox');
+	var button			= jQuery('.erling_tm_news .erling_tm_full_link, .erling_tm_news .news_list ul li .title a');
 	var closePopup		= modalBox.find('.close');
-
+	
 	button.on('click',function(){
 		var element 	= jQuery(this);
 		var parent 		= element.closest('li');
@@ -163,7 +163,7 @@ function ali_tm_modalbox_news(){
 		modalBox.find('.news_popup_informations').prepend('<div class="image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
 		modalBox.find('.news_popup_informations .image').append('<span class="date">'+date+'</span>');
 		modalBox.find('.news_popup_informations .image').after('<div class="details_news"><div class="meta">'+meta+'</div><div class="title"><h3>'+title+'</h3></div></div>');
-		ali_tm_data_images();
+		erling_tm_data_images();
 		return false;
 	});
 	closePopup.on('click',function(){
@@ -177,13 +177,13 @@ function ali_tm_modalbox_news(){
 // -------------  MODALBOX PORTFOLIO  --------------
 // -------------------------------------------------
 
-function ali_tm_modalbox_portfolio(){
-
+function erling_tm_modalbox_portfolio(){
+	
 	"use strict";
-
-	var modalBox	= jQuery('.ali_tm_modalbox');
-	var button		= jQuery('.ali_tm_portfolio .portfolio_popup');
-
+	
+	var modalBox	= jQuery('.erling_tm_modalbox');
+	var button		= jQuery('.erling_tm_portfolio .portfolio_popup');
+	
 	button.on('click',function(){
 		var element 	= jQuery(this);
 		var parent		= element.closest('.list_inner');
@@ -191,12 +191,12 @@ function ali_tm_modalbox_portfolio(){
 		var details 	= parent.find('.hidden_content_portfolio').html();
 		var title	 	= parent.find('.details h3').text();
 		var category	= parent.find('.details span').text();
-
+		
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
 		modalBox.find('.popup_details').prepend('<div class="top_image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
-		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title"><h3 class="title">'+title+'</h3><span class="category"><a href="#">'+category+'</a></span></div>');
-		ali_tm_data_images();
+		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title"><h3 class="title">'+title+'</h3><span class="category"><a href="#">'+category+'</a></span></div>');	
+		erling_tm_data_images();
 		return false;
 	});
 }
@@ -205,13 +205,13 @@ function ali_tm_modalbox_portfolio(){
 // ---------------   PRELOADER   -----------------------
 // -----------------------------------------------------
 
-function ali_tm_preloader(){
-
+function erling_tm_preloader(){
+	
 	"use strict";
-
+	
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
-
+	
 	if (!isMobile) {
 		setTimeout(function() {
 			preloader.addClass('preloaded');
@@ -229,25 +229,25 @@ function ali_tm_preloader(){
 // -----------------   MY LOAD    ----------------------
 // -----------------------------------------------------
 
-function ali_tm_my_load(){
-
+function erling_tm_my_load(){
+	
 	"use strict";
-
+	
 	var speed	= 500;
-	setTimeout(function(){ali_tm_preloader();},speed);
-	setTimeout(function(){jQuery('.ali_tm_all_wrap').addClass('ready');},speed+2000);
+	setTimeout(function(){erling_tm_preloader();},speed);
+	setTimeout(function(){jQuery('.erling_tm_all_wrap').addClass('ready');},speed+2000);
 }
 
 // -----------------------------------------------------
 // ---------------    IMAGE TO SVG    ------------------
 // -----------------------------------------------------
 
-function ali_tm_imgtosvg(){
-
+function erling_tm_imgtosvg(){
+	
 	"use strict";
-
+	
 	jQuery('img.html').each(function(){
-
+		
 		var jQueryimg 		= jQuery(this);
 		var imgClass		= jQueryimg.attr('class');
 		var imgURL			= jQueryimg.attr('src');
@@ -276,8 +276,8 @@ function ali_tm_imgtosvg(){
 // --------------------   POPUP    ---------------------
 // -----------------------------------------------------
 
-function ali_tm_popup(){
-
+function erling_tm_popup(){
+	
 	"use strict";
 
 	jQuery('.gallery_zoom').each(function() { // the containers for all your galleries
@@ -302,11 +302,11 @@ function ali_tm_popup(){
 			fixedContentPos: true
 		});
 	});
-
+	
 	jQuery('.soundcloude_link').magnificPopup({
 	  type : 'image',
 	   gallery: {
-		   enabled: true,
+		   enabled: true, 
 	   },
 	});
 }
@@ -315,12 +315,12 @@ function ali_tm_popup(){
 // ---------------   DATA IMAGES    --------------------
 // -----------------------------------------------------
 
-function ali_tm_data_images(){
-
+function erling_tm_data_images(){
+	
 	"use strict";
-
+	
 	var data			= jQuery('*[data-img-url]');
-
+	
 	data.each(function(){
 		var element			= jQuery(this);
 		var url				= element.data('img-url');
@@ -344,9 +344,9 @@ jQuery('.anchor_nav').onePageNav();
 // ---------------   SWIPER SLIDER    ------------------
 // -----------------------------------------------------
 
-function ali_tm_swiper(){
+function erling_tm_swiper(){
 	"use strict";
-
+	
 	$('.swiper-section').each(function(){
 		var element 	= $(this);
 		var container 	= element.find('.swiper-container');
@@ -358,21 +358,21 @@ function ali_tm_swiper(){
 			autoplay: {
 				delay: 6000,
 			},
-
+			
 			navigation: {
 				nextEl: '.my_next',
 				prevEl: '.my_prev',
 			  },
-
+			
 			pagination: {
-				el: '.ali_tm_swiper_progress',
+				el: '.erling_tm_swiper_progress',
 				type: 'custom', // progressbar
 				renderCustom: function (swiper,current,total) {
 
 
 					// progress animation
 					var scale,translateX;
-					var progressDOM	= container.find('.ali_tm_swiper_progress');
+					var progressDOM	= container.find('.erling_tm_swiper_progress');
 					if(progressDOM.hasClass('fill')){
 						translateX 	= '0px';
 						scale		= parseInt((current/total)*100)/100;
@@ -401,7 +401,7 @@ function ali_tm_swiper(){
 			}
 		});
 	});
-	ali_tm_imgtosvg();
+	erling_tm_imgtosvg();
 }
 
 
@@ -411,14 +411,14 @@ function ali_tm_swiper(){
 
 function myAccordion(){
 	"use strict";
-
+	
 	jQuery('.accordion_wrap').removeClass('ready');
 	jQuery('.accordion.active').each(function(){
 		jQuery(this).find('.accordion_content').css({display: 'block'});
 	});
-
+	
 	var button		= jQuery('.accordion_wrap .accordion_header');
-
+	
 	button.on('click',function(){
 		var element = jQuery(this);
 		var li		= element.closest('.accordion');
@@ -428,21 +428,21 @@ function myAccordion(){
 			li.siblings('.active').removeClass('active').find('.accordion_content').slideUp();
 			li.addClass('active').find('.accordion_content').slideDown();
 		}
-
+		
 		return false;
-
+		
 	});
-
+	
 }
 
 // -----------------------------------------------------
 // ----------------    PROGRESS LINE    ----------------
 // -----------------------------------------------------
 
-function ali_tm_progress_line(){
-
+function erling_tm_progress_line(){
+	
 	"use strict";
-
+	
 	var line			= jQuery('.progressbar .line');
 	var documentHeight 	= jQuery(document).height();
 	var windowHeight 	= jQuery(window).height();
@@ -457,16 +457,16 @@ function ali_tm_progress_line(){
 // -------------------    TOTOP    ---------------------
 // -----------------------------------------------------
 
-function ali_tm_totop(){
-
+function erling_tm_totop(){
+  
 	"use strict";
-
+	
 	var text = $('.progressbar .text');
 	text.css({bottom: 105 + text.width()});
 	$(".progressbar a").on('click', function(e) {
-		e.preventDefault();
+		e.preventDefault();    
 		$("html, body").animate({ scrollTop: 0 }, 'slow');
 		return false;
 	});
-
+	
 }
